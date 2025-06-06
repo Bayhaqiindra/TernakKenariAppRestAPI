@@ -23,7 +23,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   late final TextEditingController passwordController;
   late final GlobalKey<FormState> _key;
   bool isShowPassword = false;
-
+  
   @override
   void initState() {
     namaController = TextEditingController();
@@ -139,6 +139,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     password: passwordController.text,
                                     passwordConfirmation:
                                         passwordController.text,
+                                        roleId: 2,
                                   );
 
                                   context.read<RegisterBloc>().add(
