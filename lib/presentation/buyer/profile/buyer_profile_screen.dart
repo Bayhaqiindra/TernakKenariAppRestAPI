@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pertemuan10/presentation/buyer/profile/bloc/profile_buyer_bloc.dart';
@@ -15,38 +16,42 @@ class _BuyerProfileScreenState extends State<BuyerProfileScreen> {
   @override
   void initState() {
     super.initState();
-    // Memuat profil pembeli saat halaman dibuka
+    // Ambil profil pembeli saat halaman dimuat
     context.read<ProfileBuyerBloc>().add(GetProfileBuyerEvent());
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Profil Pembeli")),
+      appBar: AppBar(title: Text("Profil Pembeli")),
       body: BlocListener<ProfileBuyerBloc, ProfileBuyerState>(
         listener: (context, state) {
-          if (state is ProfileBuyerBloc) {
-            // Memuat ulang profil setelah ditambahkan
+          print("Current state: $state");
+          if (state is ProfileBuyerAdded) {
+            // Refresh profil setelah tambah
             context.read<ProfileBuyerBloc>().add(GetProfileBuyerEvent());
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text("Profil berhasil ditambahkan")),
+              SnackBar(content: Text("Profil berhasil ditambahkan")),
             );
           }
         },
         child: BlocBuilder<ProfileBuyerBloc, ProfileBuyerState>(
           builder: (context, state) {
             if (state is ProfileBuyerLoading) {
-              return const Center(child: CircularProgressIndicator());
+              return Center(child: CircularProgressIndicator());
             }
 
             if (state is ProfileBuyerLoaded &&
-                state.profile.data.name.isNotEmpty) {
-              final profile = state.profile.data;
+                state.profile.data?.name != null &&
+                state.profile.data!.name!.isNotEmpty) {
+                print("STATE LOADED: ${state.profile.data}");
+                print("NAMA: ${state.profile.data?.name}");
+              final profile = state.profile.data!;
               return ProfileViewBuyer(profile: profile);
             }
-
-            // Tampilkan form input jika tidak ada data atau terjadi kesalahan
-            return const ProfileBuyerInputForm();
+          
+            // Default ke form jika tidak ada data atau error
+            return ProfileBuyerInputForm();
           },
         ),
       ),
