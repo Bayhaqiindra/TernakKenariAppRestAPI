@@ -4,7 +4,6 @@ import 'package:dartz/dartz.dart';
 import 'package:pertemuan10/data/model/request/auth/login_request_model.dart';
 import 'package:pertemuan10/data/model/request/auth/register_request_model.dart';
 import 'package:pertemuan10/data/model/response/auth_response_model.dart';
-import 'package:pertemuan10/data/model/response/login_response_model.dart';
 import 'package:pertemuan10/service/service_http_client.dart';
 
 class AuthRepository {

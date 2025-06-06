@@ -44,8 +44,6 @@ class _BuyerProfileScreenState extends State<BuyerProfileScreen> {
             if (state is ProfileBuyerLoaded &&
                 state.profile.data?.name != null &&
                 state.profile.data!.name!.isNotEmpty) {
-                print("STATE LOADED: ${state.profile.data}");
-                print("NAMA: ${state.profile.data?.name}");
               final profile = state.profile.data!;
               return ProfileViewBuyer(profile: profile);
             }
