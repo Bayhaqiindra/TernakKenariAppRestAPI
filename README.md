@@ -1,16 +1,2 @@
-# pertemuan10
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+📸 Screenshot Aplikasi
+<p float="left"> <img src="https://github.com/user-attachments/assets/e6aa05b7-1374-4c7c-b622-9b77893db97c" width="200" /> <img src="https://github.com/user-attachments/assets/eb645b0d-73c8-494a-a211-b2cd9a39dccc" width="200" /> <img src="https://github.com/user-attachments/assets/3d91b5e4-fc46-4db6-9d32-fe2523ae9a3a" width="200" /> <img src="https://github.com/user-attachments/assets/3bbb9a36-19f5-48ec-b126-5a5c555a719c" width="200" /> </p>
