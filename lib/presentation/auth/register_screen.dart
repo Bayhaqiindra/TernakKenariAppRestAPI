@@ -23,3 +23,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
   late final TextEditingController passwordController;
   late final GlobalKey<FormState> _key;
   bool isShowPassword = false;
+
+@override
+  void initState() {
+    namaController = TextEditingController();
+    emailController = TextEditingController();
+    passwordController = TextEditingController();
+    _key = GlobalKey<FormState>();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    namaController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    _key.currentState?.dispose();
+    super.dispose();
+  }
