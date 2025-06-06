@@ -139,7 +139,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     password: passwordController.text,
                                     passwordConfirmation:
                                         passwordController.text,
-                                    roleId: 4,
+                                    roleId: 8,
                                   );
 
                                   context.read<RegisterBloc>().add(
