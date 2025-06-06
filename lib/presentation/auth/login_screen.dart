@@ -106,7 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           const AdminConfirmScreen(),
                           (route) => false,
                         );
-                      } else if (role == 'user') {
+                      } else if (role == 'buyer') {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(content: Text(state.responseModel.message!)),
                         );
