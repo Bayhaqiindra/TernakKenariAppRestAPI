@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 
@@ -28,7 +27,7 @@ class ServiceHttpClient {
 
   //GET
   Future<http.Response> get(String endpoint) async {
-    final token = await secureStorage.read(key: "token");
+    final token = await secureStorage.read(key: "authToken");
     final url = Uri.parse("$baseUrl$endpoint");
 
     try {
@@ -47,7 +46,7 @@ class ServiceHttpClient {
   }
 
   Future<http.Response> postWithToken(String url, dynamic body) async {
-    final token = await secureStorage.read(key: "token");
+    final token = await secureStorage.read(key: "authToken");
 
     return http.post(
       Uri.parse(baseUrl + url),
